@@ -11,4 +11,8 @@ margin-left: 10%;
  grid-gap: 10px; 
 }
 
+.app-wrapper-content{
+	grid-area: c;
+	background-color: rgb(78, 78, 78);
+}
 
