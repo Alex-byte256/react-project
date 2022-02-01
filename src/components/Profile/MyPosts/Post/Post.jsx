@@ -1,12 +1,12 @@
 import s from './Post.module.css';
 
-const Post = () =>{
+const Post = (props) =>{
 	return(       
             <div className={s.item}>
 					<img src='https://cdn-icons-png.flaticon.com/512/236/236832.png'/>
-					post 1
+					{props.message}
 					<div>
-					<span>like</span>
+					<span>Like number: {props.like}</span>
 					</div>
 					</div>
 	);
