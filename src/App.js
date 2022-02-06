@@ -8,7 +8,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -18,8 +18,19 @@ const App = () => {
           <Routes>
             {/*  <Route path="/profile" render={() => <Profile />} />
             <Route path="/dialogs/*" render={() => <Dialogs />} /> */}
-            <Route element={<Profile />} path="/profile" />
-            <Route element={<Dialogs />} path="/dialogs/*" />
+            <Route
+              element={<Profile postData={props.postData} />}
+              path="/profile"
+            />
+            <Route
+              element={
+                <Dialogs
+                  messagesData={props.messagesData}
+                  dialogsData={props.dialogsData}
+                />
+              }
+              path="/dialogs/*"
+            />
             <Route element={<News />} path="/news" />
             <Route element={<Music />} path="/music" />
             <Route element={<Settings />} path="/settings" />
