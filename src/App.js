@@ -18,16 +18,10 @@ const App = (props) => {
           <Routes>
             {/*  <Route path="/profile" render={() => <Profile />} />
             <Route path="/dialogs/*" render={() => <Dialogs />} /> */}
-            <Route
-              element={<Profile postData={props.postData} />}
-              path="/profile"
-            />
+            <Route element={<Profile posts={props.posts} />} path="/profile" />
             <Route
               element={
-                <Dialogs
-                  messagesData={props.messagesData}
-                  dialogsData={props.dialogsData}
-                />
+                <Dialogs dialogs={props.dialogs} messages={props.messages} />
               }
               path="/dialogs/*"
             />
