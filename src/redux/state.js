@@ -29,7 +29,7 @@ let state = {
       {
         id: 1,
         name: "Alex",
-        img: "https://www.blexar.com/avatar.png",
+        img: "https://cdn-icons-png.flaticon.com/512/147/147144.png",
       },
       {
         id: 2,

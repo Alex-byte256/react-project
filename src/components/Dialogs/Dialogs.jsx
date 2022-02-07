@@ -1,11 +1,7 @@
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
+import Message from './Message/Message';
 
-const Message = (props) =>{
-	return(
-<div   className={s.message}>{props.message}</div>
-	);
-}
 
 
 
