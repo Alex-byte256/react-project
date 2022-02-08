@@ -1,3 +1,4 @@
+import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
@@ -7,7 +8,12 @@ import Message from './Message/Message';
 
 const Dialogs = (props) =>{
 
-	
+	let mesres = React.createRef();
+
+	let addMessage = () =>{
+		let text = mesres.current.value;
+		alert(text);
+	}
 
 	let dialogsElements = props.dialogs
 	.map((d)=><DialogItem name={d.name} id={d.id} />);
@@ -26,6 +32,12 @@ const Dialogs = (props) =>{
 	<div className={s.messages}>
 		{messagesElements}
 	</div>
+	<div>
+		<textarea ref={mesres}></textarea>
+	</div>
+	<div>
+		<button onClick={addMessage}>Add message</button>
+		</div>
 </div>
 );
 }
