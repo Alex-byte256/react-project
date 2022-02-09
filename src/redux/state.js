@@ -18,6 +18,7 @@ let state = {
       { id: 4, message: "yo" },
       { id: 5, message: "yo" },
     ],
+    newMessageText: "message from state",
     dialogsData: [
       { id: 1, name: "Alex" },
       { id: 2, name: "Bohdan" },
@@ -74,6 +75,19 @@ export let updateNewPostText = (newText) => {
   rerenderEntireTree(state);
 };
 
-export default state;
+export let addMessage = () => {
+  let newMessage = {
+    id: 6,
+    message: state.dialogsPage.newMessageText,
+  };
+  state.dialogsPage.messagesData.push(newMessage);
+  state.dialogsPage.newMessageText = "";
+  rerenderEntireTree(state);
+};
 
-//props.updateNewPostText("");
+export let updateNewMessageText = (newMessage) => {
+  state.dialogsPage.newMessageText = newMessage;
+  rerenderEntireTree(state);
+};
+
+export default state;
