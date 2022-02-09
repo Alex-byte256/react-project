@@ -8,6 +8,7 @@ let state = {
       { id: 3, message: "I'm use arr map", likesCount: 18 },
       { id: 4, message: "I'ts work", likesCount: 23 },
     ],
+    newPostText: "this area take value from state",
   },
   dialogsPage: {
     messagesData: [
@@ -57,14 +58,22 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
   };
   state.profilePage.postData.push(newPost);
+  state.profilePage.newPostText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
 
 export default state;
+
+//props.updateNewPostText("");
