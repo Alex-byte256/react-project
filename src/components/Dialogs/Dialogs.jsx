@@ -2,7 +2,7 @@ import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
-import {addMessageActionCreator , updateNewMessageText} from "./../../redux/state"
+import {addMessageActionCreator , updateNewMessageText} from "./../../redux/dialogs-reduser"
 
 
 
@@ -37,13 +37,13 @@ const Dialogs = (props) =>{
 	</div>
 	<div className={s.messages}>
 		{messagesElements}
-	</div>
-	<div>
+		<div>
 		<textarea onChange={onMessageChange} ref={mesres} value={props.messageText} />
 	</div>
 	<div>
 		<button onClick={addMessage}>Add message</button>
 		</div>
+	</div>
 </div>
 );
 }
