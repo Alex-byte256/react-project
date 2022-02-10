@@ -10,13 +10,12 @@ let rerenderEntireTree = () => {
   ReactDOM.render(
     <React.StrictMode>
       <App
-        addPost={store.addPost.bind(store)}
+        dispatch={store.dispatch.bind(store)}
         posts={store.getState().profilePage.postData}
         dialogs={store.getState().dialogsPage.dialogsData}
         messages={store.getState().dialogsPage.messagesData}
         friends={store.getState().friendPage.avatarData}
         postText={store.getState().profilePage.newPostText}
-        updateNewPostText={store.updateNewPostText.bind(store)}
         addMessage={store.addMessage.bind(store)}
         messageText={store.getState().dialogsPage.newMessageText}
         updateNewMessageText={store.updateNewMessageText.bind(store)}
