@@ -68,7 +68,7 @@ let store = {
     this._rerenderEntireTree = observer;
   },
 
-  addMessage() {
+  /* addMessage() {
     let newMessage = {
       id: 6,
       message: this._state.dialogsPage.newMessageText,
@@ -80,7 +80,7 @@ let store = {
   updateNewMessageText(newMessage) {
     this._state.dialogsPage.newMessageText = newMessage;
     this._rerenderEntireTree(this._state);
-  },
+  }, */
 
   dispatch(action) {
     if (action.type === "ADD-POST") {
@@ -94,6 +94,17 @@ let store = {
       this._rerenderEntireTree(this._state);
     } else if (action.type === "UPDATE-NEW-POST-TEXT") {
       this._state.profilePage.newPostText = action.newText;
+      this._rerenderEntireTree(this._state);
+    } else if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: 6,
+        message: this._state.dialogsPage.newMessageText,
+      };
+      this._state.dialogsPage.messagesData.push(newMessage);
+      this._state.dialogsPage.newMessageText = "";
+      this._rerenderEntireTree(this._state);
+    } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
+      this._state.dialogsPage.newMessageText = action.newMessageText;
       this._rerenderEntireTree(this._state);
     }
   },

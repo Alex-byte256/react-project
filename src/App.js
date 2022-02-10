@@ -33,9 +33,8 @@ const App = (props) => {
                 <Dialogs
                   dialogs={props.dialogs}
                   messages={props.messages}
-                  addMessage={props.addMessage}
+                  dispatch={props.dispatch}
                   messageText={props.messageText}
-                  updateNewMessageText={props.updateNewMessageText}
                 />
               }
               path="/dialogs/*"

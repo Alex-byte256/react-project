@@ -16,9 +16,7 @@ let rerenderEntireTree = () => {
         messages={store.getState().dialogsPage.messagesData}
         friends={store.getState().friendPage.avatarData}
         postText={store.getState().profilePage.newPostText}
-        addMessage={store.addMessage.bind(store)}
         messageText={store.getState().dialogsPage.newMessageText}
-        updateNewMessageText={store.updateNewMessageText.bind(store)}
       />
     </React.StrictMode>,
     document.getElementById("root")
