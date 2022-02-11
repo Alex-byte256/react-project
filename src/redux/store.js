@@ -1,4 +1,4 @@
-import dialogsReduser from "./dialogs-reduser";
+/* import dialogsReduser from "./dialogs-reduser";
 import friendReduser from "./friend-reduser";
 import profileReduser from "./profile-reduser";
 
@@ -83,3 +83,4 @@ let store = {
 
 export default store;
 window.store = store;
+ */

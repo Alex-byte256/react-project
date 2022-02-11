@@ -1,6 +1,6 @@
-import { addPost } from '../../redux/state';
+/* import { addPost } from '../../redux/store'; */
 import MyPosts from './MyPosts/MyPosts';
-import s from './Profile.module.css';
+/* import s from './Profile.module.css'; */
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 
