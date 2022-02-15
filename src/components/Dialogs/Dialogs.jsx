@@ -2,30 +2,31 @@ import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
-import {addMessageActionCreator , updateNewMessageText} from "./../../redux/dialogs-reduser"
 
 
 
 const Dialogs = (props) =>{
 
+	console.log(props.state);
+	
 	let mesres = React.createRef();
 
 
 
 	let addMessage = () =>{
-		props.dispatch(addMessageActionCreator());
+		props.addMessageActionCreator();
 	}
 
 	let onMessageChange = () =>{
 		let text = mesres.current.value;
-		props.dispatch(updateNewMessageText(text));
+		props.updateNewMessageText(text);
 	}
 	
-	let dialogsElements = props.dialogs
+	let dialogsElements = props.state.dialogsPage.dialogsData
 	.map((d)=><DialogItem name={d.name} id={d.id} />);
 	
 	
-	let messagesElements = props.messages
+	let messagesElements = props.state.dialogsPage.messagesData
 	.map((m) => <Message message={m.message} />);
 
 	return (
@@ -38,7 +39,7 @@ const Dialogs = (props) =>{
 	<div className={s.messages}>
 		{messagesElements}
 		<div>
-		<textarea onChange={onMessageChange} ref={mesres} value={props.messageText} />
+		<textarea onChange={onMessageChange} ref={mesres} value={props.state.dialogsPage.newMessageText} />
 	</div>
 	<div>
 		<button onClick={addMessage}>Add message</button>
