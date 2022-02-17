@@ -10,26 +10,29 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Navbar friends={props.friends} />
-        <div className="app-wrapper-content">
-          <Routes>
-            {/*  <Route path="/profile" render={() => <Profile />} />
+    //<BrowserRouter>
+    <div className="app-wrapper">
+      <Header />
+      <Navbar friends={props.friends} />
+      <div className="app-wrapper-content">
+        <Routes>
+          {/*  <Route path="/profile" render={() => <Profile />} />
             <Route path="/dialogs/*" render={() => <Dialogs />} /> */}
-            <Route element={<Profile store={props.store} />} path="/profile" />
-            <Route
-              element={<DialogsContainer store={props.store} />}
-              path="/dialogs/*"
-            />
-            <Route element={<News />} path="/news" />
-            <Route element={<Music />} path="/music" />
-            <Route element={<Settings />} path="/settings" />
-          </Routes>
-        </div>
+          <Route
+            element={<Profile /* store={props.store} */ />}
+            path="/profile"
+          />
+          <Route
+            element={<DialogsContainer /* store={props.store} */ />}
+            path="/dialogs/*"
+          />
+          <Route element={<News />} path="/news" />
+          <Route element={<Music />} path="/music" />
+          <Route element={<Settings />} path="/settings" />
+        </Routes>
       </div>
-    </BrowserRouter>
+    </div>
+    //</BrowserRouter>
   );
 };
 

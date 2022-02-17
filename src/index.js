@@ -5,19 +5,20 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import store from "./redux/redux-store";
+import { Provider } from "./StoreContext";
+import { BrowserRouter } from "react-router-dom";
 
 let rerenderEntireTree = () => {
   ReactDOM.render(
-    <React.StrictMode>
-      <App
-        store={store}
-        dispatch={store.dispatch.bind(store)}
-        dialogs={store.getState().dialogsPage.dialogsData}
-        messages={store.getState().dialogsPage.messagesData}
-        friends={store.getState().friendPage.avatarData}
-        messageText={store.getState().dialogsPage.newMessageText}
-      />
-    </React.StrictMode>,
+    <BrowserRouter>
+      <React.StrictMode>
+        <Provider store={store}>
+          <App
+            /* store={store} */ friends={store.getState().friendPage.avatarData}
+          />
+        </Provider>
+      </React.StrictMode>
+    </BrowserRouter>,
     document.getElementById("root")
   );
 };
